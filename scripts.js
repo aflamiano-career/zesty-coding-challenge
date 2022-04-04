@@ -13,8 +13,7 @@ const ABOUT_JSON = 'https://www.zesty.io/-/gql/about.json';
 
 getJson(ABOUT_JSON).then(data => {
     aboutTitle.innerText = `${data[0].title}`;
-    aboutHeroImg.innerHTML =
-        `<img src="${data[0].hero_image}" alt="" class="img-fluid hero-image-item">`;
+    aboutHeroImg.setAttribute('src', data[0].hero_image);
     aboutHeroContent.innerHTML = `${data[0].hero_content}`;
-    aboutPageContent.innerHTML = `${data[0].page_content}`
+    aboutPageContent.innerHTML = `${data[0].page_content}`;
 });
